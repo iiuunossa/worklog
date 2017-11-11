@@ -77,7 +77,7 @@
     <script scr="/js/jquery-3.2.1.js"></script>
     <script scr="/js/bootstrap.js"></script>
 
-    <!-- <script>
+    <script>
     $("#input1").on('change', function(){
         console.log('value changed to ' + this.value);
         if(this.value != 0){
@@ -87,12 +87,8 @@
             
         }
     });
-    </script> -->
-    <script>
-        $("#input1").on('change', function(){
-            console.log('value changed');
-        });
     </script>
+
 
 </body>
 </html>
