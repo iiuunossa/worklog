@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    
     <link rel="stylesheet" href="/css/bootstrap.css">
+
+
     <title>Create log</title>
 </head>
 <body>
@@ -74,16 +78,22 @@
 
     </div>
     
-    <script scr="/js/jquery-3.2.1.js"></script>
-    <script scr="/js/bootstrap.js"></script>
+    <!-- <script scr="/js/jquery-3.2.1.js"></script> -->
+    <!-- <script scr="/js/bootstrap.js"></script> -->
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
 
     <script>
     $("#input1").on('change', function(){
         console.log('value changed to ' + this.value);
         if(this.value != 0){
-            $("div-input2").collapse("show");
+            $("#div-input2").collapse("show");
         }else {
-            $("div-input2").collapse("hide");
+            $("#div-input2").collapse("hide");
             
         }
     });
