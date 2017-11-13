@@ -78,17 +78,58 @@
                     </div>
                 </div>
 
-
-
                 <div class="form-group">
-                        <label for="detail" class="col-xs-4 control-label text-right">รายละเอียด :</label>
+                    <label for="detail" class="col-xs-4 control-label text-right">รายละเอียด :</label>
                         <div class="col-xs-8">
                             <input class="form-control" type="text" id="detail">
-                    
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date" class="col-xs-4 control-label text-right">วันที่ :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="date" id="date">
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="starttime" class="col-xs-4 control-label text-right">เวลาเริ่มต้น :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="time" id="starttime">
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="stoptime" class="col-xs-4 control-label text-right">เวลาสิ้นสุด :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="time" id="stoptime">
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="requester" class="col-xs-4 control-label text-right">ผู้ร้องขอ :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" id="requester">
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="status" class="col-xs-4 control-label text-right">สถานะงาน :</label>
+                        <div class="col-xs-8">
+                            <select name="" id="status">
+                                <option value="0">กรุณาเลือก</option>
+                                <option value="1">Ongoing</option>
+                                <option value="2">Complete</option>
                             </select>
                         </div>
-                    </div>
+                </div>
 
+                <br/>
+                <div class="text-right">
+                    <button type="button" class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-danger">Cancle</button>
+                </div>
+                     
         
             </form>
         </div>
