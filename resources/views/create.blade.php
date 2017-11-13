@@ -22,9 +22,9 @@
             <form action="" class="form-horizontal">
 
                 <div class="form-group">
-                    <label for="input1" class="col-xs-4 control-label text-right">กลุ่มงาน :</label>
+                    <label for="mainjob" class="col-xs-4 control-label text-right">กลุ่มงาน :</label>
                     <div class="col-xs-8">
-                        <select name="" id="input1">
+                        <select name="" id="mainjob">
                             <option value="0">กรุณาเลือก</option>
                             <option value="1">งานสารสนเทศ</option>
                             <option value="2">งานนโยบายและแผน</option>
@@ -38,12 +38,13 @@
                     </div>
                 </div>
 
-                <div class="collapse" id="div-input2">
+                <div class="collapse" id="div-subjob">
                     <div class="form-group">
-                        <label for="input2" class="col-xs-4 control-label text-right">งานหลัก :</label>
+                        <label for="subjob" class="col-xs-4 control-label text-right">งานหลัก :</label>
                         <div class="col-xs-8">
-                            <select name="" id="input2">
+                            <select name="" id="subjob">
                                 <option value="0">กรุณาเลือก</option>
+                                <option value="1">บริหารจัดการ</option>
                             
                             </select>
                             
@@ -51,22 +52,38 @@
                     </div>
                 </div>
 
-                <div class="collapse">
+                <div class="collapse" id="div-taskjob">
                     <div class="form-group">
-                        <label for="input3" class="col-xs-4 control-label text-right">งานรอง :</label>
+                        <label for="taskjob" class="col-xs-4 control-label text-right">งานรอง :</label>
                         <div class="col-xs-8">
-                            <select name="" id="input3">
+                            <select name="" id="taskjob">
                                 <option value="0">กรุณาเลือก</option>
+                                <option value="1">เปิดเคส</option>
                     
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                        <label for="input4" class="col-xs-4 control-label text-right">รายละเอียด :</label>
+                <div class="collapse" id="div-subtaskjob">
+                    <div class="form-group">
+                        <label for="subtaskjob" class="col-xs-4 control-label text-right">งานย่อย :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="input4">
+                            <select name="" id="subtaskjob">
+                                <option value="0">กรุณาเลือก</option>
+                                <option value="1">IT Support</option>
+                    
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                        <label for="detail" class="col-xs-4 control-label text-right">รายละเอียด :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" id="detail">
                     
                             </select>
                         </div>
@@ -78,25 +95,49 @@
 
     </div>
     
-    <!-- <script scr="/js/jquery-3.2.1.js"></script> -->
-    <!-- <script scr="/js/bootstrap.js"></script> -->
+    <!-- <script scr="/js/jquery-3.2.1.js"></script>-->
+    <!-- <script scr="/js/bootstrap.js"></script>  -->
 
-    <script
+    <!-- <script
         src="https://code.jquery.com/jquery-3.2.1.js"
         integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
         crossorigin="anonymous">
+    </script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        $("#mainjob").on('change', function(){
+            console.log('value changed to ' + this.value);
+            if(this.value != 0){
+                $("#div-subjob").collapse("show");
+            }else {
+                $("#div-subjob").collapse("hide");        
+            }
+        });
     </script>
 
     <script>
-    $("#input1").on('change', function(){
-        console.log('value changed to ' + this.value);
-        if(this.value != 0){
-            $("#div-input2").collapse("show");
-        }else {
-            $("#div-input2").collapse("hide");
-            
-        }
-    });
+        $("#subjob").on('change', function(){
+            console.log('value changed to ' + this.value);
+            if(this.value != 0){
+                $("#div-taskjob").collapse("show");
+            }else {
+                $("#div-taskjob").collapse("hide");        
+            }
+        });
+    </script>
+
+    <script>
+        $("#taskjob").on('change', function(){
+            console.log('value changed to ' + this.value);
+            if(this.value != 0){
+                $("#div-subtaskjob").collapse("show");
+            }else {
+                $("#div-subtaskjob").collapse("hide");        
+            }
+        });
     </script>
 
 
