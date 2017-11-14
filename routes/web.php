@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/loadcsv', function () {
+    return view('loadcsv');
+});
+
+Route::post('/loadcsv', 'JobcodesController@uploadFile');
+
 Route::get('/navbar', function () {
     return view('navbar');
 });
