@@ -88,21 +88,21 @@
                 <div class="form-group">
                     <label for="date" class="col-xs-4 control-label text-right">วันที่ :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="date" id="date">
+                            <input class="form-control" type="text" id="date">
                         </div>
                 </div>
 
                 <div class="form-group">
                     <label for="starttime" class="col-xs-4 control-label text-right">เวลาเริ่มต้น :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="time" id="starttime">
+                            <input class="form-control" type="text" id="starttime">
                         </div>
                 </div>
 
                 <div class="form-group">
                     <label for="stoptime" class="col-xs-4 control-label text-right">เวลาสิ้นสุด :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="time" id="stoptime">
+                            <input class="form-control" type="text" id="stoptime">
                         </div>
                 </div>
 

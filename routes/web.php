@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+
+
 Route::get('/create', function () {
     return view('create');
 });
