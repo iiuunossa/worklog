@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('/api/cat/{topic}', function ($topic) {
+    return \App\Jobcode::select('cat_id','cat_name')
+    ->where('topic_id',$topic)->distinct()->get();
+});
+
+
 Route::get('/loadcsv', function () {
     return view('loadcsv');
 });
