@@ -11,9 +11,29 @@
 |
 */
 
+Route::get('/api/task/{topic}/{cat}', function ($topic,$cat) {
+    return \App\Jobcode::select('cat_id','cat_name','task_id as value','task_name as text')
+    ->where('topic_id',$topic)
+    ->where('cat_id',$cat)
+    ->distinct()
+    ->get();
+});
+
+
+Route::get('/api/topic', function () {
+    return \App\Jobcode::select('topic_id as value','topic_name as text')
+    ->where ('topic_id', '<>',0)
+    ->distinct()
+    ->get();
+   
+});
+
+
 Route::get('/api/cat/{topic}', function ($topic) {
-    return \App\Jobcode::select('cat_id','cat_name')
-    ->where('topic_id',$topic)->distinct()->get();
+    return \App\Jobcode::select('cat_id as value','cat_name as text')
+    ->where('topic_id',$topic)
+    ->distinct()
+    ->get();
 });
 
 
