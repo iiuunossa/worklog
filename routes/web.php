@@ -11,6 +11,18 @@
 |
 */
 
+
+Route::get('/api/title/{topic}/{cat}/{task}', function ($topic,$cat,$task) {
+    return \App\Jobcode::select('cat_id','cat_name','task_id','task_name','title_id as value','title_name as text')
+    ->where('topic_id',$topic)
+    ->where('cat_id',$cat)
+    ->where('task_id',$task)
+    ->distinct()
+    ->get();
+});
+
+
+
 Route::get('/api/task/{topic}/{cat}', function ($topic,$cat) {
     return \App\Jobcode::select('cat_id','cat_name','task_id as value','task_name as text')
     ->where('topic_id',$topic)

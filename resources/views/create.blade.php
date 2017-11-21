@@ -66,6 +66,22 @@
                         </div>
                     </div>
                 </div>
+
+
+            <!-- ส่วนกรอกข้อมูลกรอกเลขเปิดเคสของภาคฯ (med_ticket) -->
+
+                <div class="collapse" id="div-med_ticket">
+                    <div class="form-group">
+                        <label for="title" class="col-xs-4 control-label text-right">หมายเลขรับงานภาคฯ :</label>
+                        <div class="col-xs-8">
+                            <input class="form-control" type="text" id="med_ticket"><br>
+                            <input type="radio" name="ticket_status" value="1"> ส่งต่อศูนย์คอม<br>
+                            <label for="title" class="control-label text-right">Ticket :</label>
+                            <input class="form-control" type="text" id="ticket">
+                        </div>
+                    </div>
+                </div>
+
             
             <!-- ส่วนกรอกข้อมูลรายละเอียด -->
 
@@ -150,6 +166,7 @@
     <script>
 
     // -- ดึงข้อมูลจาก topic มาจาก database --//
+
         $.get('/api/topic/', function(response){
                     // console.log(response);
                     var options = '<option value="0">กรุณาเลือก</option>';
@@ -161,6 +178,7 @@
                     });
 
     // -- Filter ข้อมูล cat จาก topic โดยถ้าไม่ได้เลือก topic ให้ซ่อน cat ไว้ --//
+
         $("#topic").on('change', function(){
             // console.log(this.value);
             if(this.value == 0){
@@ -176,24 +194,21 @@
                     // console.log(options);
                     });
                 $("#div-cat").collapse("show");
-
             }
-
         });
-
-
     </script>
 
 
     <script>
 
     // -- Filter ข้อมูล task จาก cat โดยถ้าไม่ได้เลือก cat ให้ซ่อน task ไว้ --//
+
         $("#cat").on('change', function(){
             console.log(this.value);
             if(this.value == 0){
                 $("#div-task").collapse("hide");
             }else{
-                $.get('/api/task/'+'1'+'/'+ this.value, function(response){
+                $.get('/api/task/'+ $('#topic').val() +'/'+ this.value, function(response){
                     console.log(response);
                     var options = '<option value="0">กรุณาเลือก</option>';
                     $.each(response, function(index, option){
@@ -204,61 +219,38 @@
                     });
                 $("#div-task").collapse("show");
             }
-
-        });
-    
-    </script>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <script>
-        $("#topic").on('change', function(){
-            console.log('value changed to ' + this.value);
-            if(this.value != 0){
-                $("#div-cat").collapse("show");
-            }else {
-                $("#div-cat").collapse("hide");        
-            }
-        });
+        });  
     </script>
 
     <script>
-        $("#cat").on('change', function(){
-            console.log('value changed to ' + this.value);
-            if(this.value != 0){
-                $("#div-task").collapse("show");
-            }else {
-                $("#div-task").collapse("hide");        
-            }
-        });
-    </script>
 
-    <script>
+    // -- Filter ข้อมูล title จาก task โดยถ้าไม่ได้เลือก task ให้ซ่อน title ไว้ --//
+
         $("#task").on('change', function(){
-            console.log('value changed to ' + this.value);
-            if(this.value != 0){
-                $("#div-title").collapse("show");
-            }else {
-                $("#div-title").collapse("hide");        
-            }
-        });
-    </script> -->
+            console.log(this.value);
+            if(this.value == 0){
+                $("#div-title").collapse("hide");
+            }else{
+                $.get('/api/title/' + $('#topic').val() + '/' +  $('#cat').val() + '/' + this.value, function(response){
+                    console.log(response);
+                    var options = '<option value="0">กรุณาเลือก</option>';
+                    $.each(response, function(index, option){
+                        options += '<option value="' + option.value + '">' + option.text + '</option>'
+                    });
+                    $('#title').html(options);
+                    console.log(options);
+                    });
 
+                $("#div-title").collapse("show");
+            }
+            if(this.value == 2){
+                $("#div-med_ticket").collapse("show");
+            }else{
+                $("#div-med_ticket").collapse("hide"); 
+            }
+            
+        });  
+    </script>
 
 </body>
 </html>
