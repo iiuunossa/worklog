@@ -6,6 +6,42 @@ use Illuminate\Http\Request;
 
 class JobcodesController extends Controller
 {
+    public function create(){
+      return view('create');
+    }
+
+    public function Filtertopic(){
+      return \App\Jobcode::select('topic_id as value','topic_name as text')
+        ->where ('topic_id', '<>',0)
+        ->distinct()
+        ->get();
+    }
+
+    public function Filtercat($topic){
+      return \App\Jobcode::select('cat_id as value','cat_name as text')
+        ->where('topic_id',$topic)
+        ->distinct()
+        ->get();
+    }
+
+    public function Filtertask($topic,$cat){
+      return \App\Jobcode::select('cat_id','cat_name','task_id as value','task_name as text')
+        ->where('topic_id',$topic)
+        ->where('cat_id',$cat)
+        ->distinct()
+        ->get();
+    }
+
+    public function Filtertitle($topic,$cat,$task){
+      return \App\Jobcode::select('cat_id','cat_name','task_id','task_name','title_id as value','title_name as text')
+        ->where('topic_id',$topic)
+        ->where('cat_id',$cat)
+        ->where('task_id',$task)
+        ->distinct()
+        ->get();
+    }
+
+
     public function uploadFile(Request $request){
         //เช็คว่า $request input ที่ชื่อว่า 'files' เป็นไฟล์หรือไม่
         if ($request->hasFile('files')){

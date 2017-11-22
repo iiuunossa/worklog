@@ -243,7 +243,7 @@
 
                 $("#div-title").collapse("show");
             }
-            if(this.value == 2){
+            if ($('#topic').val()==1 && $('#cat').val()==1 && (this.value == 2)){
                 $("#div-med_ticket").collapse("show");
             }else{
                 $("#div-med_ticket").collapse("hide"); 
