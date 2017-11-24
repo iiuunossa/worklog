@@ -11,6 +11,11 @@
 |
 */
 
+Route::post('/worklog', function(Illuminate\Http\Request $request){
+    return $request->all();
+});
+
+
 
 // Route::get('/api/title/{topic}/{cat}/{task}', function ($topic,$cat,$task) {
 //     return \App\Jobcode::select('cat_id','cat_name','task_id','task_name','title_id as value','title_name as text')

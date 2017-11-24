@@ -19,7 +19,11 @@
         <br/>
 
         <div class="col-md-4 col-md-offset-4">
-            <form action="" class="form-horizontal">
+            <form action="/worklog" class="form-horizontal" method="POST">
+            {{csrf_field()}}
+
+
+
 
             <!-- ส่วนกรอกข้อมูลกลุ่มงาน (topic) -->
 
@@ -141,7 +145,7 @@
 
                 <br/>
                 <div class="text-right">
-                    <button type="button" class="btn btn-success">Save</button>
+                    <input type="submit" class="btn btn-success" value="Save">
                     <button type="button" class="btn btn-danger">Cancle</button>
                 </div>
                      
@@ -183,6 +187,10 @@
             // console.log(this.value);
             if(this.value == 0){
                 $("#div-cat").collapse("hide");
+                $("#div-task").collapse("hide");
+                $("#div-title").collapse("hide");
+                
+
             }else{
                 $.get('/api/cat/' + this.value, function(response){
                     // console.log(response);
@@ -194,6 +202,8 @@
                     // console.log(options);
                     });
                 $("#div-cat").collapse("show");
+                $("#div-task").collapse("hide");
+                $("#div-title").collapse("hide");
             }
         });
     </script>
@@ -207,6 +217,8 @@
             console.log(this.value);
             if(this.value == 0){
                 $("#div-task").collapse("hide");
+                $("#div-title").collapse("hide");
+
             }else{
                 $.get('/api/task/'+ $('#topic').val() +'/'+ this.value, function(response){
                     console.log(response);
@@ -218,6 +230,7 @@
                     console.log(options);
                     });
                 $("#div-task").collapse("show");
+                $("#div-title").collapse("hide");
             }
         });  
     </script>
