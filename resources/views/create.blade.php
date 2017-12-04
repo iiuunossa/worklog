@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label for="topic" class="col-xs-4 control-label text-right">กลุ่มงาน :</label>
                     <div class="col-xs-8">
-                        <select name="" id="topic">
+                        <select name="topic_id" id="topic">
                         </select>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <label for="cat" class="col-xs-4 control-label text-right">งานหลัก :</label>
                         <div class="col-xs-8">
-                            <select name="" id="cat">
+                            <select name="cat_id" id="cat">
                             </select>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="form-group">
                         <label for="task" class="col-xs-4 control-label text-right">งานรอง :</label>
                         <div class="col-xs-8">
-                            <select name="" id="task">
+                            <select name="task_id" id="task">
                             </select>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label for="title" class="col-xs-4 control-label text-right">งานย่อย :</label>
                         <div class="col-xs-8">
-                            <select name="" id="title">
+                            <select name="title_id" id="title">
                             </select>
                         </div>
                     </div>
@@ -78,10 +78,10 @@
                     <div class="form-group">
                         <label for="title" class="col-xs-4 control-label text-right">หมายเลขรับงานภาคฯ :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="med_ticket"><br>
+                            <input class="form-control" type="text" name="med_ticket" id="med_ticket"><br>
                             <input type="radio" name="ticket_status" value="1"> ส่งต่อศูนย์คอม<br>
                             <label for="title" class="control-label text-right">Ticket :</label>
-                            <input class="form-control" type="text" id="ticket">
+                            <input class="form-control" type="text" name="ticket" id="ticket">
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                 <div class="form-group">
                     <label for="detail" class="col-xs-4 control-label text-right">รายละเอียด :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="detail">
+                            <input class="form-control" type="text" name="detail" id="detail">
                         </div>
                 </div>
 
@@ -101,7 +101,7 @@
                 <div class="form-group">
                     <label for="date" class="col-xs-4 control-label text-right">วันที่ :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="date">
+                            <input class="form-control" type="text" name="date" id="date">
                         </div>
                 </div>
             <!-- ส่วนกรอกข้อมูลเวลาที่เริ่มต้นปฎิบัติงาน -->
@@ -109,7 +109,7 @@
                 <div class="form-group">
                     <label for="starttime" class="col-xs-4 control-label text-right">เวลาเริ่มต้น :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="starttime">
+                            <input class="form-control" type="text" name="starttime" id="starttime">
                         </div>
                 </div>
 
@@ -118,7 +118,7 @@
                 <div class="form-group">
                     <label for="stoptime" class="col-xs-4 control-label text-right">เวลาสิ้นสุด :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="stoptime">
+                            <input class="form-control" type="text" name="stoptime" id="stoptime">
                         </div>
                 </div>
             <!-- ส่วนกรอกข้อมูล Requester -->
@@ -126,7 +126,7 @@
                 <div class="form-group">
                     <label for="requester" class="col-xs-4 control-label text-right">ผู้ร้องขอ :</label>
                         <div class="col-xs-8">
-                            <input class="form-control" type="text" id="requester">
+                            <input class="form-control" type="text" name="requester" id="requester">
                         </div>
                 </div>
 
@@ -135,7 +135,7 @@
                 <div class="form-group">
                     <label for="status" class="col-xs-4 control-label text-right">สถานะงาน :</label>
                         <div class="col-xs-8">
-                            <select name="" id="status">
+                            <select name="status" id="status">
                                 <option value="0">กรุณาเลือก</option>
                                 <option value="1">Ongoing</option>
                                 <option value="2">Complete</option>
@@ -146,7 +146,6 @@
                 <br/>
                 <div class="text-right">
                     <input type="submit" class="btn btn-success" value="Save">
-                    <button type="button" class="btn btn-danger">Cancle</button>
                 </div>
                      
         

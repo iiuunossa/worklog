@@ -11,9 +11,12 @@
 |
 */
 
-Route::post('/worklog', function(Illuminate\Http\Request $request){
-    return $request->all();
-});
+
+Route::post('/worklog','WorklogsController@store');
+
+// Route::post('/worklog', function(Illuminate\Http\Request $request){
+//     return $request->all();
+// });
 
 
 

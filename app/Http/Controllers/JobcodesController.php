@@ -10,6 +10,7 @@ class JobcodesController extends Controller
       return view('create');
     }
 
+
     public function Filtertopic(){
       return \App\Jobcode::select('topic_id as value','topic_name as text')
         ->where ('topic_id', '<>',0)

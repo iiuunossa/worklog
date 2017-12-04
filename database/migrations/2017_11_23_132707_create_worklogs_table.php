@@ -19,7 +19,7 @@ class CreateWorklogsTable extends Migration
             $table->smallInteger('cat_id')->unsigned()->index();
             $table->smallInteger('task_id')->unsigned()->index();
             $table->smallInteger('title_id')->unsigned()->index();
-            $table->string('type_name',10);
+            $table->string('med_ticket',10);
             $table->boolean('ticket_status');
             $table->string('ticket',6);
             $table->string('detail',255);
@@ -28,6 +28,7 @@ class CreateWorklogsTable extends Migration
             $table->time('stoptime');
             $table->string('requester',50);
             $table->tinyInteger('status')->unsigned()->index();
+            $table->integer('jobid');
             $table->timestamps();
         });
     }

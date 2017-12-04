@@ -13,7 +13,7 @@ class Worklog extends Model
             'cat_id',
             'task_id',
             'title_id',
-            'type_name',
+            'med_ticket',
             'ticket_status',
             'ticket',
             'detail',
@@ -21,6 +21,7 @@ class Worklog extends Model
             'starttime',
             'stoptime',
             'requester',
-            'status'
+            'status',
+            'jobid'
         ];
 }
