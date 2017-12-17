@@ -75,6 +75,14 @@ Route::get('/navbar', function () {
     return view('navbar');
 });
 
+Route::get('/draft/admin', function () {
+    return view('draft.admin');
+});
+
+Route::get('/draft/user', function () {
+    return view('draft.user');
+});
+
 Route::get('/create', 'JobcodesController@create');
 
 // Route::get('/create', function () {
